@@ -1,7 +1,11 @@
 import { Robot, Gripper, ValidationResult, VisionSystem, Sensor, PLCController, Pneumatic, Feeder, SafetySystem, SafetyHousing } from '../types';
 
-// Point to backend API. In development we run backend on port 8000.
-const API_BASE = 'http://localhost:8000/api/v1';
+// Point to backend API.
+// In development: http://localhost:8000
+// In production: Set VITE_API_URL environment variable to your Cloudflare Worker URL
+const API_BASE = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api/v1` 
+  : 'http://localhost:8000/api/v1';
 
 export async function getRobots(): Promise<Robot[]> {
   const res = await fetch(`${API_BASE}/robots`);

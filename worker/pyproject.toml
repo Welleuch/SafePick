@@ -1,0 +1,26 @@
+[project]
+name = "safepick"
+version = "0.1.0"
+description = "SafePick - Pick & Place Configuration Tool Backend"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "pydantic>=2.0",
+    "numpy>=1.26",
+    "httpx>=0.27",
+]
+
+[dependency-groups]
+dev = [
+    "workers-py",
+    "workers-runtime-sdk",
+]
+
+[tool.pywrangler]
+wrangler = { version = "3.100" }
+
+[tool.pywrangler.worker]
+name = "safepick-backend"
+main = "worker.py"
+compatibility_date = "2025-05-01"
+compatibility_flags = ["python_workers"]

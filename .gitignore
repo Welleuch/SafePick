@@ -27,3 +27,6 @@ Thumbs.db
 
 # Build outputs
 frontend/dist/
+
+# Environment files (keep .env.example for template)
+frontend/.env
