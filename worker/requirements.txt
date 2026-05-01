@@ -1,7 +1,0 @@
-# Python Worker Dependencies
-# Supported packages: https://developers.cloudflare.com/workers/languages/python/packages/
-
-fastapi
-pydantic
-numpy
-httpx
